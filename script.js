@@ -39,10 +39,13 @@ function playRound(playerSelection, compSelection){
         compWin +=1
         result = "AAAAAH GOTTEEEM! LOSER! Paper beats rock!!! Obviously!!!"
     } else if (compSelection === "paper" && playerSelection === "scissors"){
-        compWin +=1
+        playerWin +=1
         result = "whatever. you win this round. scissors beat paper. good for you..."
     }
 
     return result
 }
 
+function game(){
+    for
+}
