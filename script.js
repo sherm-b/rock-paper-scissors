@@ -40,6 +40,20 @@ function playRound(playerSelection, compSelection){
         result = "whatever. you win this round. scissors beat paper. good for you..."
     }
 
-    return [winValue, result]
+    let resultPkg = [winValue, result]
+
+    return resultPkg
 }
 
+function game(){
+    for(let i = 0; i < 5; i++){
+        results = playRound()
+        if (results[0] === 0){
+            console.log(`${results[1]}`)
+        } else if (results[0] === 1){
+            console.log(`${results[1]}`)
+        } else if (results[0] === 2){
+            console.log(`${results[1]}`)
+        }
+    }
+}
