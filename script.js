@@ -46,14 +46,26 @@ function playRound(playerSelection, compSelection){
 }
 
 function game(){
+    let playerScore = 0;
+    let compScore = 0;
+
     for(let i = 0; i < 5; i++){
         results = playRound()
         if (results[0] === 0){
-            console.log(`${results[1]}`)
+            console.log(`${results[1]}`);
+            console.log(`No change in score. Player :${playerScore} Computer :${compScore}`);
         } else if (results[0] === 1){
-            console.log(`${results[1]}`)
+            console.log(`${results[1]}`);
+            console.log("Computer scores. Player :" + playerScore + " Computer:" + ++compScore);
         } else if (results[0] === 2){
-            console.log(`${results[1]}`)
+            console.log(`${results[1]}`);
+            console.log("Player scores. Player :" + ++playerScore + " Computer:" + compScore)
         }
+    }
+
+    if (playerScore > compScore){
+        console.log("PLAYER WINS! Congratulations! You just beat a random number generator at a game of chance!!")
+    } else {
+        console.log("COMPUTER WINS! BOO-YAH! YOU SUCK!")
     }
 }
