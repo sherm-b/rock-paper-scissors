@@ -14,6 +14,7 @@ function getComputerChoice(){
 }
 
 //plays one round of rock - paper - scissors
+//winValue 0 = tie ; 1 = comp ; 2 = player
 
 function playRound(){
     compSelection = getComputerChoice();
