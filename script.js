@@ -1,6 +1,6 @@
 //gets computer player's choice
 
-function getComputerChoice(compChoice){
+function getComputerChoice(){
     let value = Math.floor(Math.random() * 3) + 1;
     if (value === 1){
         compChoice = "rock"
@@ -15,7 +15,7 @@ function getComputerChoice(compChoice){
 
 //plays one round of rock - paper - scissors
 
-function playRound(playerSelection, compSelection){
+function playRound(){
     compSelection = getComputerChoice();
     playerPreLower = prompt("Rock, Paper, or Scissors??? Choose wisely!", "")
     playerSelection = playerPreLower.toLowerCase();
