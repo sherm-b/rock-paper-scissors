@@ -1,12 +1,14 @@
-#A simple rock - paper - scissors game that plays in the console browser
+# A simple rock - paper - scissors game that plays in the console browser
 
 How To Play -
 
-Open console and enter game()
-Enter your choice of rock, paper, or scissors in the prompt window.
-The computer will choose one of these as well, and let you know who the winner is in a console message
+~Open console and enter game()
 
-Best of 5 wins!
+~Enter your choice of rock, paper, or scissors in the prompt window.
+
+~The computer will choose one of these as well, and let you know who the winner is in a console message
+
+~Best of 5 wins!
 
 Reflections - 
 
