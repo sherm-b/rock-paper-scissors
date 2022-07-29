@@ -1,3 +1,5 @@
+//gets computer player's choice
+
 function getComputerChoice(compChoice){
     let value = Math.floor(Math.random() * 3) + 1;
     if (value === 1){
@@ -10,6 +12,8 @@ function getComputerChoice(compChoice){
     return compChoice
 
 }
+
+//plays one round of rock - paper - scissors
 
 function playRound(playerSelection, compSelection){
     compSelection = getComputerChoice();
@@ -45,6 +49,9 @@ function playRound(playerSelection, compSelection){
     return resultPkg
 }
 
+//full game function. plays 5 rounds of rock - paper - scissors and keeps score.
+//winner is announced at the end of the game.
+
 function game(){
     let playerScore = 0;
     let compScore = 0;
@@ -63,7 +70,9 @@ function game(){
         }
     }
 
-    if (playerScore > compScore){
+    if(playerScore == compScore){
+        console.log("TIE! That's lame. You should play again.")
+    } else if (playerScore > compScore){
         console.log("PLAYER WINS! Congratulations! You just beat a random number generator at a game of chance!!")
     } else {
         console.log("COMPUTER WINS! BOO-YAH! YOU SUCK!")
