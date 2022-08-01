@@ -13,6 +13,28 @@ function getComputerChoice(){
 
 }
 
+let roundOutput = document.getElementById('round-output')
+
+const rockBtn = document.querySelector('#rock')
+rockBtn.addEventListener('click', () => {
+    playRound('rock')
+    roundOutput.textContent = result;
+})
+
+const paperBtn = document.querySelector('#paper')
+paperBtn.addEventListener('click', () => {
+    playRound('paper')
+    roundOutput.textContent = result;
+})
+
+const scissorsBtn = document.querySelector('#scissors')
+scissorsBtn.addEventListener('click', () => {
+    playRound('scissors')
+    roundOutput.textContent = result;
+})
+
+
+
 //plays one round of rock - paper - scissors
 //winValue 0 = tie ; 1 = comp ; 2 = player
 
@@ -43,19 +65,9 @@ function playRound(playerSelection){
         result = "whatever. you win this round. scissors beat paper. good for you..."
     }
 
-    let resultPkg = [winValue, result]
-
-    return console.log(resultPkg)
+    return result
 }
 
 //full game function. plays 5 rounds of rock - paper - scissors and keeps score.
 //winner is announced at the end of the game.
 
-const rockBtn = document.querySelector('#rock')
-rockBtn.addEventListener('click', playRound('rock'))
-
-const paperBtn = document.querySelector('#paper')
-paperBtn.addEventListener('click', playRound('paper'))
-
-const scissorsBtn = document.querySelector('#scissors')
-scissorsBtn.addEventListener('click', playRound('scissors'))
