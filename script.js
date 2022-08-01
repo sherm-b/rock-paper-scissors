@@ -16,10 +16,8 @@ function getComputerChoice(){
 //plays one round of rock - paper - scissors
 //winValue 0 = tie ; 1 = comp ; 2 = player
 
-function playRound(){
+function playRound(playerSelection){
     compSelection = getComputerChoice();
-    playerPreLower = prompt("Rock, Paper, or Scissors??? Choose wisely!", "")
-    playerSelection = playerPreLower.toLowerCase();
 
     let winValue = 0;
     
@@ -47,35 +45,17 @@ function playRound(){
 
     let resultPkg = [winValue, result]
 
-    return resultPkg
+    return console.log(resultPkg)
 }
 
 //full game function. plays 5 rounds of rock - paper - scissors and keeps score.
 //winner is announced at the end of the game.
 
-function game(){
-    let playerScore = 0;
-    let compScore = 0;
+const rockBtn = document.querySelector('#rock')
+rockBtn.addEventListener('click', playRound('rock'))
 
-    for(let i = 0; i < 5; i++){
-        results = playRound()
-        if (results[0] === 0){
-            console.log(`${results[1]}`);
-            console.log(`No change in score. Player :${playerScore} Computer :${compScore}`);
-        } else if (results[0] === 1){
-            console.log(`${results[1]}`);
-            console.log("Computer scores. Player :" + playerScore + " Computer:" + ++compScore);
-        } else if (results[0] === 2){
-            console.log(`${results[1]}`);
-            console.log("Player scores. Player :" + ++playerScore + " Computer:" + compScore)
-        }
-    }
+const paperBtn = document.querySelector('#paper')
+paperBtn.addEventListener('click', playRound('paper'))
 
-    if(playerScore == compScore){
-        console.log("TIE! That's lame. You should play again.")
-    } else if (playerScore > compScore){
-        console.log("PLAYER WINS! Congratulations! You just beat a random number generator at a game of chance!!")
-    } else {
-        console.log("COMPUTER WINS! BOO-YAH! YOU SUCK!")
-    }
-}
+const scissorsBtn = document.querySelector('#scissors')
+scissorsBtn.addEventListener('click', playRound('scissors'))
