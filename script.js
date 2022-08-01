@@ -14,24 +14,108 @@ function getComputerChoice(){
 }
 
 let roundOutput = document.getElementById('round-output')
+let playerScoreCounter = document.getElementById('player-score')
+let compScoreCounter = document.getElementById('computer-score')
+let scorePlayer = 0;
+let scoreComp = 0;
+let resultPkg = [0, ""];
+
+const startBtn = document.getElementById('start-game')
+startBtn.addEventListener('click', () => {
+    newGame()
+})
 
 const rockBtn = document.querySelector('#rock')
 rockBtn.addEventListener('click', () => {
     playRound('rock')
-    roundOutput.textContent = result;
+    if (roundOutput.textContent == ''){
+        return
+    } else if (scorePlayer == 5 || scoreComp == 5){
+        return
+    } else if (resultPkg[0] == 1 && scoreComp < 4){
+        roundOutput.textContent = resultPkg[1];
+        ++scoreComp
+        compScoreCounter.textContent = `${scoreComp}`
+    } else if (resultPkg[0] == 2 && scorePlayer < 4){
+        roundOutput.textContent = resultPkg[1];
+        ++scorePlayer
+        playerScoreCounter.textContent = `${scorePlayer}`
+    } else if (resultPkg[0] == 1 && scoreComp == 4){
+        ++scoreComp
+        compScoreCounter.textContent = `${scoreComp}`
+        roundOutput.textContent = 'Computer Wins. Try again by clicking the "New Game" button'
+    } else if (resultPkg[0] == 2 && scorePlayer == 4){
+        ++scorePlayer
+        playerScoreCounter.textContent = `${scorePlayer}`
+        roundOutput.textContent = 'You Win! Congratulations! Play again by clicking the "New Game" button'
+    } else {
+        roundOutput.textContent = resultPkg[1];
+    }
 })
 
 const paperBtn = document.querySelector('#paper')
 paperBtn.addEventListener('click', () => {
     playRound('paper')
-    roundOutput.textContent = result;
+    if (roundOutput.textContent == ''){
+        return
+    } else if (scorePlayer == 5 || scoreComp == 5){
+        return
+    } else if (resultPkg[0] == 1 && scoreComp < 4){
+        roundOutput.textContent = resultPkg[1];
+        ++scoreComp
+        compScoreCounter.textContent = `${scoreComp}`
+    } else if (resultPkg[0] == 2 && scorePlayer < 4){
+        roundOutput.textContent = resultPkg[1];
+        ++scorePlayer
+        playerScoreCounter.textContent = `${scorePlayer}`
+    } else if (resultPkg[0] == 1 && scoreComp == 4){
+        ++scoreComp
+        compScoreCounter.textContent = `${scoreComp}`
+        roundOutput.textContent = 'Computer Wins. Try again by clicking the "New Game" button'
+    } else if (resultPkg[0] == 2 && scorePlayer == 4){
+        ++scorePlayer
+        playerScoreCounter.textContent = `${scorePlayer}`
+        roundOutput.textContent = 'You Win! Congratulations! Play again by clicking the "New Game" button'
+    } else {
+        roundOutput.textContent = resultPkg[1];
+    }
 })
 
 const scissorsBtn = document.querySelector('#scissors')
 scissorsBtn.addEventListener('click', () => {
     playRound('scissors')
-    roundOutput.textContent = result;
+    if (roundOutput.textContent == ''){
+        return
+    } else if (scorePlayer == 5 || scoreComp == 5){
+        return
+    } else if (resultPkg[0] == 1 && scoreComp < 4){
+        roundOutput.textContent = resultPkg[1];
+        ++scoreComp
+        compScoreCounter.textContent = `${scoreComp}`
+    } else if (resultPkg[0] == 2 && scorePlayer < 4){
+        roundOutput.textContent = resultPkg[1];
+        ++scorePlayer
+        playerScoreCounter.textContent = `${scorePlayer}`
+    } else if (resultPkg[0] == 1 && scoreComp == 4){
+        ++scoreComp
+        compScoreCounter.textContent = `${scoreComp}`
+        roundOutput.textContent = 'Computer Wins. Try again by clicking the "New Game" button'
+    } else if (resultPkg[0] == 2 && scorePlayer == 4){
+        ++scorePlayer
+        playerScoreCounter.textContent = `${scorePlayer}`
+        roundOutput.textContent = 'You Win! Congratulations! Play again by clicking the "New Game" button'
+    } else {
+        roundOutput.textContent = resultPkg[1];
+    }
 })
+
+function newGame() {
+    roundOutput.textContent = "Choose Your Weapon!"
+    scorePlayer = 0
+    scoreComp = 0
+    playerScoreCounter.textContent = `${scorePlayer}`
+    compScoreCounter.textContent = `${scoreComp}`
+}
 
 
 
@@ -40,8 +124,9 @@ scissorsBtn.addEventListener('click', () => {
 
 function playRound(playerSelection){
     compSelection = getComputerChoice();
+    let winValue = 0
 
-    let winValue = 0;
+    
     
     if (compSelection === playerSelection){
         result = "TIE! No winners, no losers. How very boring..."
@@ -64,10 +149,7 @@ function playRound(playerSelection){
         winValue += 2
         result = "whatever. you win this round. scissors beat paper. good for you..."
     }
+    resultPkg = [winValue, result]
 
-    return result
+    return resultPkg
 }
-
-//full game function. plays 5 rounds of rock - paper - scissors and keeps score.
-//winner is announced at the end of the game.
-
