@@ -43,11 +43,11 @@ rockBtn.addEventListener('click', () => {
     } else if (resultPkg[0] == 1 && scoreComp == 4){
         ++scoreComp
         compScoreCounter.textContent = `${scoreComp}`
-        roundOutput.textContent = 'Computer Wins. Try again by clicking the "New Game" button'
+        roundOutput.textContent = 'Paper beats rock. Computer Wins. Try again by clicking the "New Game" button'
     } else if (resultPkg[0] == 2 && scorePlayer == 4){
         ++scorePlayer
         playerScoreCounter.textContent = `${scorePlayer}`
-        roundOutput.textContent = 'You Win! Congratulations! Play again by clicking the "New Game" button'
+        roundOutput.textContent = 'Rock beats scissors. You Win! Congratulations! Play again by clicking the "New Game" button'
     } else {
         roundOutput.textContent = resultPkg[1];
     }
@@ -71,11 +71,11 @@ paperBtn.addEventListener('click', () => {
     } else if (resultPkg[0] == 1 && scoreComp == 4){
         ++scoreComp
         compScoreCounter.textContent = `${scoreComp}`
-        roundOutput.textContent = 'Computer Wins. Try again by clicking the "New Game" button'
+        roundOutput.textContent = 'Scissors beat paper. Computer Wins. Try again by clicking the "New Game" button'
     } else if (resultPkg[0] == 2 && scorePlayer == 4){
         ++scorePlayer
         playerScoreCounter.textContent = `${scorePlayer}`
-        roundOutput.textContent = 'You Win! Congratulations! Play again by clicking the "New Game" button'
+        roundOutput.textContent = 'Paper beats rock. You Win! Congratulations! Play again by clicking the "New Game" button'
     } else {
         roundOutput.textContent = resultPkg[1];
     }
@@ -99,11 +99,11 @@ scissorsBtn.addEventListener('click', () => {
     } else if (resultPkg[0] == 1 && scoreComp == 4){
         ++scoreComp
         compScoreCounter.textContent = `${scoreComp}`
-        roundOutput.textContent = 'Computer Wins. Try again by clicking the "New Game" button'
+        roundOutput.textContent = 'Rock beats scissors. Computer Wins. Try again by clicking the "New Game" button'
     } else if (resultPkg[0] == 2 && scorePlayer == 4){
         ++scorePlayer
         playerScoreCounter.textContent = `${scorePlayer}`
-        roundOutput.textContent = 'You Win! Congratulations! Play again by clicking the "New Game" button'
+        roundOutput.textContent = 'Scissors beat paper. You Win! Congratulations! Play again by clicking the "New Game" button'
     } else {
         roundOutput.textContent = resultPkg[1];
     }
