@@ -43,6 +43,10 @@ body{
     flex-direction: column;
 }
 
+#round-output{
+    margin: 20px 0;
+}
+
 #scoreboard{
     display: flex;
     align-items: center;
