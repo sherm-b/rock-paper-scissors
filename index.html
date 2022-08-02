@@ -9,20 +9,34 @@
 </head>
 <body>
     <h1>ROCK PAPER SCISSORS</h1>
-    <div id="start-game-button">
-        <button id="start-game">New Game</button>
+    <div class="content">
+        <div id="start-game-button">
+            <button id="start-game">New Game</button>
+        </div>
+        <div class="buttons">
+            <div class="button">
+                <img src="/images/icons8-hand-rock-96.png">
+                <button id='rock'>Rock</button>
+            </div>
+            <div class="button">
+                <img src="/images/icons8-hand-96.png">
+                <button id='paper'>Paper</button>
+            </div>
+            <div class="button">
+                <img src="/images/icons8-hand-scissors-96.png">
+                <button id='scissors'>Scissors</button>
+            </div>
+        </div>
+        <div id="round-output"></div>
+        <div class="scoreboard-complete">
+            <h2>Score</h2>
+            <div id='scoreboard'>
+                <p>Player: </p><div id="player-score"></div>
+                <p>Computer: </p><div id="computer-score"></div>
+            </div>
+        </div>
     </div>
-    <div class="buttons">
-        <button id='rock'>Rock</button>
-        <button id='paper'>Paper</button>
-        <button id='scissors'>Scissors</button>
-    </div>
-    <div id="round-output"></div>
-    <div id='scoreboard'>
-        <p>Player: </p><div id="player-score"></div>
-        <p>Computer: </p><div id="computer-score"></div>
-    </div>
-    <footer><a target="_blank" href="https://icons8.com/icon/92NCmTozc9Vi/hand">Hand</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><a target="_blank" href="https://icons8.com/icon/Kfh4f1cI8U6a/hand-scissors">Hand Scissors</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><a target="_blank" href="https://icons8.com/icon/rgETewkjtAZq/hand-rock">Hand Rock</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></footer>
-</body>
+    <footer><a target="_blank" href="https://icons8.com/icon/92NCmTozc9Vi/hand">Hand</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> | <a target="_blank" href="https://icons8.com/icon/Kfh4f1cI8U6a/hand-scissors">Hand Scissors</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> | <a target="_blank" href="https://icons8.com/icon/rgETewkjtAZq/hand-rock">Hand Rock</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></footer>
+    </body>
 <script src="script.js"></script>
 </html>

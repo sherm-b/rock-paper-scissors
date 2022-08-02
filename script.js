@@ -25,7 +25,7 @@ let scoreComp = 0;
 let resultPkg = [0, ""];
 
 function instrOnLoad(){
-    instructions.textContent = 'Do you think you can defeat the computer at rock paper scissors? Press "New Game" to test your luck'
+    instructions.textContent = 'Do you think you can defeat the computer at rock paper scissors? Press "New Game" to test your luck. First player to 5 points wins!'
     startBtnDiv.appendChild(instructions)
 }
 
