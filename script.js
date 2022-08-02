@@ -16,9 +16,20 @@ function getComputerChoice(){
 let roundOutput = document.getElementById('round-output')
 let playerScoreCounter = document.getElementById('player-score')
 let compScoreCounter = document.getElementById('computer-score')
+let startBtnDiv = document.getElementById('start-game-button')
+
+let instructions = document.createElement('p')
+
 let scorePlayer = 0;
 let scoreComp = 0;
 let resultPkg = [0, ""];
+
+function instrOnLoad(){
+    instructions.textContent = 'Do you think you can defeat the computer at rock paper scissors? Press "New Game" to test your luck'
+    startBtnDiv.appendChild(instructions)
+}
+
+instrOnLoad()
 
 const startBtn = document.getElementById('start-game')
 startBtn.addEventListener('click', () => {
@@ -110,11 +121,14 @@ scissorsBtn.addEventListener('click', () => {
 })
 
 function newGame() {
-    roundOutput.textContent = "Choose Your Weapon!"
-    scorePlayer = 0
-    scoreComp = 0
-    playerScoreCounter.textContent = `${scorePlayer}`
-    compScoreCounter.textContent = `${scoreComp}`
+    if (instructions.textContent !== ''){
+        instructions.textContent = ''
+    }
+        roundOutput.textContent = "Choose Your Weapon!"
+        scorePlayer = 0
+        scoreComp = 0
+        playerScoreCounter.textContent = `${scorePlayer}`
+        compScoreCounter.textContent = `${scoreComp}`    
 }
 
 
